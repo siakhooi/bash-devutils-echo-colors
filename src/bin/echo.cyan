@@ -1,0 +1,8 @@
+#!/bin/bash
+
+STARTCOLOR=$'\e[1;36m'
+ENDCOLOR=$'\e[0m'
+
+echo -n "${STARTCOLOR}"
+echo "$@"
+echo -n "${ENDCOLOR}"
