@@ -16,7 +16,7 @@ echo.yellow <echo arguments>
 
 ## Sample
 
-![sample](sample.png "Sample")
+![sample](sample.gif "Sample")
 
 ## Quick Start
 
