@@ -1,4 +1,4 @@
-% DevUtils-Echo-Colors(1) Siak Hooi Development Utilities 1.1.0 | DevUtils Commands
+% ECHO-COLORS(1) Siak Hooi DevUtils 1.1.0 | DevUtils Commands
 % Siak Hooi
 % February 2023
 
