@@ -30,7 +30,7 @@ pandoc $SOURCE/md/siakhooi-devutils-echo-colors.1.md -s -t man | gzip -9 >$TARGE
   ln -s siakhooi-devutils-echo-colors.1.gz echo.yellow.1.gz
 )
 
-dpkg --build $TARGET
+dpkg-deb --build -Zxz $TARGET
 dpkg-name ${TARGET}.deb
 
 DEBFILE=$(ls ./*.deb)
