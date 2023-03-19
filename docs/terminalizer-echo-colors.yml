@@ -23,7 +23,7 @@ config:
   # Explicitly set the number of rows
   # or use `auto` to take the current
   # number of rows of your shell
-  rows: 13
+  rows: 15
 
   # Amount of times to repeat GIF
   # If value is -1, play once
@@ -457,7 +457,60 @@ records:
   - delay: 100
     content: "\r\n\e[?2004l\r\e[1;33mThis is Yellow!\r\n\e[0m"
   - delay: 10
-    content: "$ "
+    content: '$ '
+  - delay: 500
+    content: e
+  - delay: 100
+    content: c
+  - delay: 100
+    content: h
+  - delay: 100
+    content: o
+  - delay: 100
+    content: .
+  - delay: 100
+    content: g
+  - delay: 100
+    content: r
+  - delay: 100
+    content: e
+  - delay: 100
+    content: 'y'
+  - delay: 100
+    content: ' '
+  - delay: 100
+    content: '"'
+  - delay: 100
+    content: T
+  - delay: 100
+    content: h
+  - delay: 100
+    content: i
+  - delay: 100
+    content: s
+  - delay: 100
+    content: ' '
+  - delay: 100
+    content: i
+  - delay: 100
+    content: s
+  - delay: 100
+    content: ' '
+  - delay: 100
+    content: G
+  - delay: 100
+    content: r
+  - delay: 100
+    content: e
+  - delay: 100
+    content: 'y'
+  - delay: 100
+    content: '!'
+  - delay: 100
+    content: '"'
+  - delay: 100
+    content: "\r\n\e[?2004l\r\e[1;90mThis is Grey!\r\n\e[0m"
+  - delay: 10
+    content: '$ '
   - delay: 2000
     content: "\r\n"
-

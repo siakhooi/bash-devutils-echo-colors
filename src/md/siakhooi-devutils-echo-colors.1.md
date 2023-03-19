@@ -3,12 +3,13 @@
 % February 2023
 
 # NAME
-echo.blue - echo with blue colors.  
-echo.cyan - echo with cyan colors.  
-echo.green - echo with green colors.  
-echo.magenta - echo with magenta colors.  
-echo.red - echo with red colors.  
-echo.yellow - echo with yellow colors.
+echo.blue - echo with blue color.  
+echo.cyan - echo with cyan color.  
+echo.green - echo with green color.  
+echo.magenta - echo with magenta color.  
+echo.red - echo with red color.  
+echo.yellow - echo with yellow color.  
+echo.grey - echo with grey color.
 
 # SYNOPSIS
 **echo.blue** [echo arguments]  
@@ -16,7 +17,8 @@ echo.yellow - echo with yellow colors.
 **echo.green** [echo arguments]  
 **echo.magenta** [echo arguments]  
 **echo.red** [echo arguments]  
-**echo.yellow** [echo arguments]
+**echo.yellow** [echo arguments]  
+**echo.grey** [echo arguments]
 
 # DESCRIPTION
 Programs that echo with colors.
@@ -39,6 +41,9 @@ Programs that echo with colors.
 
 **echo.yellow** "This is Yellow!"
 : This is Yellow!
+
+**echo.grey** "This is Grey!"
+: This is Grey!
 
 # LICENSE
 MIT

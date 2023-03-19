@@ -12,6 +12,7 @@ echo.green <echo arguments>
 echo.magenta <echo arguments>
 echo.red <echo arguments>
 echo.yellow <echo arguments>
+echo.grey <echo arguments>
 ```
 
 ## Sample

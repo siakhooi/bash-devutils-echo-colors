@@ -28,6 +28,7 @@ pandoc $SOURCE/md/siakhooi-devutils-echo-colors.1.md -s -t man | gzip -9 >$TARGE
   ln -s siakhooi-devutils-echo-colors.1.gz echo.magenta.1.gz
   ln -s siakhooi-devutils-echo-colors.1.gz echo.red.1.gz
   ln -s siakhooi-devutils-echo-colors.1.gz echo.yellow.1.gz
+  ln -s siakhooi-devutils-echo-colors.1.gz echo.grey.1.gz
 )
 
 dpkg-deb --build -Zxz $TARGET
