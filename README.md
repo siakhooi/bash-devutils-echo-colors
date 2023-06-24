@@ -32,7 +32,6 @@ $ sudo apt install siakhooi-devutils-echo-colors
 ## Deployments
 
 - <https://siakhooi.github.io/apt/>
-- <https://siakhooi.jfrog.io/ui/packages>
 
 ## Badges
 
