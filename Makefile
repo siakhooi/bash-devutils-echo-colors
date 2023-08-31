@@ -1,6 +1,9 @@
 clean:
 	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
-build:
+prepare:
+	sudo apt update -y
+	sudo apt install pandoc shellcheck fakeroot -y
+build: clean
 	./build.sh
 
 test-man:

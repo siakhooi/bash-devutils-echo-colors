@@ -58,3 +58,8 @@ $ sudo apt install siakhooi-devutils-echo-colors
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
 ![visitors](https://hit-tztugwlsja-uc.a.run.app/?outputtype=badge&counter=ghmd-bash-echo-colors)
+
+## Reference
+- `clear-colors`
+    - <https://unix.stackexchange.com/questions/111899/how-to-strip-color-codes-out-of-stdout-and-pipe-to-file-and-stdout>
+    - <https://stackoverflow.com/questions/17998978/removing-colors-from-output>

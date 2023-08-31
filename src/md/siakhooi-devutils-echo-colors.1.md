@@ -3,22 +3,24 @@
 % February 2023
 
 # NAME
-echo.blue - echo with blue color.  
-echo.cyan - echo with cyan color.  
-echo.green - echo with green color.  
-echo.magenta - echo with magenta color.  
-echo.red - echo with red color.  
-echo.yellow - echo with yellow color.  
-echo.grey - echo with grey color.
+echo.blue - echo with blue color.\
+echo.cyan - echo with cyan color.\
+echo.green - echo with green color.\
+echo.magenta - echo with magenta color.\
+echo.red - echo with red color.\
+echo.yellow - echo with yellow color.\
+echo.grey - echo with grey color.\
+clear-colors - remove colors from standard input and print to standard output.
 
 # SYNOPSIS
-**echo.blue** [echo arguments]  
-**echo.cyan** [echo arguments]  
-**echo.green** [echo arguments]  
-**echo.magenta** [echo arguments]  
-**echo.red** [echo arguments]  
-**echo.yellow** [echo arguments]  
-**echo.grey** [echo arguments]
+**echo.blue** [echo arguments]\
+**echo.cyan** [echo arguments]\
+**echo.green** [echo arguments]\
+**echo.magenta** [echo arguments]\
+**echo.red** [echo arguments]\
+**echo.yellow** [echo arguments]\
+**echo.grey** [echo arguments]\
+**clear-colors**
 
 # DESCRIPTION
 Programs that echo with colors.
