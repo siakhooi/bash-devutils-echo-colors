@@ -1,5 +1,13 @@
 clean:
 	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
+
+set-version:
+	scripts/set-version.sh
+git-commit-and-push:
+	scripts/git-commit-and-push.sh
+create-release:
+	scripts/create-release.sh
+
 prepare:
 	sudo apt update -y
 	sudo apt install pandoc shellcheck fakeroot -y
