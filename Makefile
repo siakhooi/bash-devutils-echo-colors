@@ -7,6 +7,8 @@ git-commit-and-push:
 	scripts/git-commit-and-push.sh
 create-release:
 	scripts/create-release.sh
+delete-release:
+	gh release delete --cleanup-tag 1.3.0
 
 set-path:
 	export PATH=$PATH:$(pwd)/src/bin
