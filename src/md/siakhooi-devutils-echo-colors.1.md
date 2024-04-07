@@ -10,6 +10,13 @@ echo.magenta - echo with magenta color.\
 echo.red - echo with red color.\
 echo.yellow - echo with yellow color.\
 echo.grey - echo with grey color.\
+cat.blue - cat file with blue color.\
+cat.cyan - cat file with cyan color.\
+cat.green - cat file with green color.\
+cat.magenta - cat file with magenta color.\
+cat.red - cat file with red color.\
+cat.yellow - cat file with yellow color.\
+cat.grey - cat file with grey color.\
 clear-colors - remove colors from standard input and print to standard output.
 
 # SYNOPSIS
@@ -20,6 +27,13 @@ clear-colors - remove colors from standard input and print to standard output.
 **echo.red** [echo arguments]\
 **echo.yellow** [echo arguments]\
 **echo.grey** [echo arguments]\
+**cat.blue** [cat arguments]\
+**cat.cyan** [cat arguments]\
+**cat.green** [cat arguments]\
+**cat.magenta** [cat arguments]\
+**cat.red** [cat arguments]\
+**cat.yellow** [cat arguments]\
+**cat.grey** [cat arguments]\
 **clear-colors**
 
 # DESCRIPTION

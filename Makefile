@@ -8,6 +8,8 @@ git-commit-and-push:
 create-release:
 	scripts/create-release.sh
 
+set-path:
+	export PATH=$PATH:$(pwd)/src/bin
 prepare:
 	sudo apt update -y
 	sudo apt install pandoc shellcheck fakeroot -y
