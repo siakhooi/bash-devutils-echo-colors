@@ -2,6 +2,4 @@ target
 *.deb
 *.deb.sha256sum
 *.deb.sha512sum
-test_helper
-.gitmodules
 bats-test-*
