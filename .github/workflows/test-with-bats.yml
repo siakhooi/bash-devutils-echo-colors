@@ -14,6 +14,6 @@ jobs:
       - run: ./scripts/bats-test-run.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: bats-test-resutls
+          name: bats-test-results
           path: |
             ./bats-test-*
