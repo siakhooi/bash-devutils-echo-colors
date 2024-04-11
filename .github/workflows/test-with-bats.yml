@@ -1,0 +1,19 @@
+name: Test With Bats
+
+on: workflow_call
+
+jobs:
+  bats-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: sudo apt install bats
+      - run: ./scripts/bats-test-setup.sh
+      - run: ./scripts/scripts/bats-test-run.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bats-test-resutls
+          path: |
+            ./bats-test-*
