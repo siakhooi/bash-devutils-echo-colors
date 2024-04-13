@@ -2,4 +2,5 @@ target
 *.deb
 *.deb.sha256sum
 *.deb.sha512sum
-bats-test-*
+/bats-test-*.log
+test_helper

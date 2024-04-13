@@ -10,6 +10,11 @@ create-release:
 delete-release:
 	gh release delete --cleanup-tag 1.3.0
 
+prepare-test:
+	scripts/bats-test-setup.sh
+run-test:
+	scripts/bats-test-run.sh
+
 set-path:
 	export PATH=$PATH:$(pwd)/src/bin
 prepare:
