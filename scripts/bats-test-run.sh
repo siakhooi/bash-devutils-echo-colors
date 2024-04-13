@@ -3,10 +3,9 @@
 BATS_HELPER=test_helper
 export BATS_HELPER
 
-CUSTOM_LOG=bats-test-custom.log
-export CUSTOM_LOG
-
 SOURCE_BIN=$(pwd)/src/bin
 export SOURCE_BIN
 
-bats -r tests | tee bats-test-result.log
+TEST_RUN_NUMBER=$(date +%Y%m%d%H%M%S)
+
+bats -r tests | tee bats-test-result-${TEST_RUN_NUMBER}.log 2>&1
