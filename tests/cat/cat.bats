@@ -4,15 +4,11 @@ setup() {
 
     testDatafile=$BATS_TEST_DIRNAME/cat_test_data
     outputExpected=$BATS_TEST_FILENAME.$BATS_TEST_DESCRIPTION.expected
-    outputActual="$TEST_TEMP_DIR/$(basename "$BATS_TEST_FILENAME").$BATS_TEST_DESCRIPTION.actual"
-
 }
 
 cat_test(){
     command=$1
-
-    run bash -c "cat $testDatafile | $command | tee $outputActual"
-
+    run bash -c "cat $testDatafile | $command"
     assert_output - < $outputExpected
 }
 @test "cat.blue" {

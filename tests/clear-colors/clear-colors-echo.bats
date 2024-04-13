@@ -3,14 +3,13 @@ setup() {
     common_setup
 
     outputExpected=$BATS_TEST_FILENAME.expected
-    outputActual="$TEST_TEMP_DIR/$(basename "$BATS_TEST_FILENAME").$BATS_TEST_DESCRIPTION.actual"
 
     testLine="Hello World!"
 }
 clear-colors-echo-test(){
     command=$1
 
-    run bash -c "$command $testLine | clear-colors | tee $outputActual"
+    run bash -c "$command $testLine | clear-colors"
     assert_output - <$outputExpected
 }
 @test "clear-colors_echo.blue" {

@@ -3,14 +3,12 @@ setup(){
     common_setup
 
     outputExpected=$BATS_TEST_FILENAME.$BATS_TEST_DESCRIPTION.expected
-    outputActual="$TEST_TEMP_DIR/$(basename "$BATS_TEST_FILENAME").$BATS_TEST_DESCRIPTION.actual"
 
     testLine="Hello World!"
 }
 echo_test(){
     command=$1
-
-    run bash -c "$command $testLine | tee $outputActual"
+    run bash -c "$command $testLine"
     assert_output - <$outputExpected
 }
 @test "echo.blue" {
