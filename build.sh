@@ -38,7 +38,7 @@ dpkg-name ${TARGET}.deb
 
 DEBFILE=$(ls ./*.deb)
 
-sha256sum "$DEBFILE" >$DEBFILE.sha256sum
-sha512sum "$DEBFILE" >$DEBFILE.sha512sum
+sha256sum "$DEBFILE" >"$DEBFILE.sha256sum"
+sha512sum "$DEBFILE" >"$DEBFILE.sha512sum"
 
 dpkg --contents "$DEBFILE"
