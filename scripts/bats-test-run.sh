@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 BATS_HELPER=test_helper
 export BATS_HELPER

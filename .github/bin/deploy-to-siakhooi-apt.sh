@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 PATH_TO_FILE=$(ls ./*.deb)
