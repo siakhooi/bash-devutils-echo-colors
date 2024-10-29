@@ -1,10 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
-shellcheck src/bin/*
-
-TARGET=target
-SOURCE=src
+readonly TARGET=target
+readonly SOURCE=src
 
 mkdir "$TARGET"
 

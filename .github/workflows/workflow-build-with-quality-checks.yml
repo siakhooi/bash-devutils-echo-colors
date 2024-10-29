@@ -5,7 +5,10 @@ on:
       - "*"
 
 jobs:
-  test:
-    uses: ./.github/workflows/build-with-shellcheck.yml
+  shellcheck:
+    uses: ./.github/workflows/shellcheck.yml
+  build-deb:
+    uses: ./.github/workflows/build-deb.yml
+    needs: shellcheck
   bats-test:
     uses: ./.github/workflows/test-with-bats.yml

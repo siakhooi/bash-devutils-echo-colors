@@ -20,8 +20,8 @@ set-path:
 prepare:
 	sudo apt update -y
 	sudo apt install pandoc shellcheck fakeroot -y
-build: clean
-	./build.sh
+build:
+	./scripts/build-deb.sh
 
 test-man:
 	pandoc src/md/siakhooi-devutils-echo-colors.1.md -s -t man | man -l -
