@@ -1,0 +1,90 @@
+Name:           siakhooi-devutils-echo-colors
+Version:        1.3.6
+Release:        1%{?dist}
+Summary:        Several echo commands to print text with colors.
+
+License:        MIT
+URL:            https://github.com/siakhooi/bash-devutils-echo-colors
+Source0:        https://github.com/siakhooi/%{name}/archive/refs/tags/${version}.tar.gz
+BuildArch:      noarch
+
+Requires:       bash
+
+%description
+Several echo commands to print text with colors.
+
+%install
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_mandir}/man1
+install -m 0755 usr/bin/* %{buildroot}%{_bindir}
+install -m 644 usr/share/man/man1/* %{buildroot}%{_mandir}/man1
+
+%post
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.blue.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.cyan.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.green.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.magenta.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.red.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.yellow.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.grey.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/clear-colors.1.gz
+
+%postun
+%{__rm} -f %{_mandir}/man1/echo.blue.1.gz
+%{__rm} -f %{_mandir}/man1/echo.cyan.1.gz
+%{__rm} -f %{_mandir}/man1/echo.green.1.gz
+%{__rm} -f %{_mandir}/man1/echo.magenta.1.gz
+%{__rm} -f %{_mandir}/man1/echo.red.1.gz
+%{__rm} -f %{_mandir}/man1/echo.yellow.1.gz
+%{__rm} -f %{_mandir}/man1/echo.grey.1.gz
+%{__rm} -f %{_mandir}/man1/clear-colors.1.gz
+
+%files
+%license LICENSE
+%{_bindir}/cat.blue
+%{_bindir}/cat.cyan
+%{_bindir}/cat.green
+%{_bindir}/cat.grey
+%{_bindir}/cat.magenta
+%{_bindir}/cat.red
+%{_bindir}/cat.yellow
+%{_bindir}/clear-colors
+%{_bindir}/echo.blue
+%{_bindir}/echo.cyan
+%{_bindir}/echo.green
+%{_bindir}/echo.grey
+%{_bindir}/echo.magenta
+%{_bindir}/echo.red
+%{_bindir}/echo.yellow
+%{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz
+
+%changelog
+* Wed Oct 30 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.6
+- create rpm version
+
+* Tue Oct 29 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.5
+- update script to google style
+
+* Mon Oct 28 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.2
+- update script to google style
+
+* Tue Oct 22 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.1
+- update script to google style
+
+* Sun Apr 07 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.0
+- add cat.blue, cat.cyan, cat.green, cat.grey, cat.red, cat.magenta, cat.yellow
+
+* Thu Aug 31 2023 Siak Hooi <siakhooi@gmail.com> - 1.2.0
+- add clear-colors
+
+* Fri May 19 2023 Siak Hooi <siakhooi@gmail.com> - 1.1.1
+- fix owner and permission
+
+* Sun Mar 19 2023 Siak Hooi <siakhooi@gmail.com> - 1.1.0
+- add echo.grey
+
+* Fri Mar 10 2023 Siak Hooi <siakhooi@gmail.com> - 1.0.1
+- fix man page
+
+* Mon Feb 13 2023 Siak Hooi <siakhooi@gmail.com> - 1.0.0
+- initial version

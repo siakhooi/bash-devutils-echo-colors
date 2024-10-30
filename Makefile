@@ -1,6 +1,11 @@
 clean:
-	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
-
+	rm -rf target *.deb *.sha256sum *.sha512sum *.rpm ~/rpmbuild
+build-deb: clean
+	./scripts/build-deb.sh
+build-rpm: clean
+	scripts/build-rpms.sh
+check-rpm-version:
+	rpm -qf /usr/bin/echo.red
 set-version:
 	scripts/set-version.sh
 git-commit-and-push:
@@ -20,8 +25,6 @@ set-path:
 prepare:
 	sudo apt update -y
 	sudo apt install pandoc shellcheck fakeroot -y
-build:
-	./scripts/build-deb.sh
 
 test-man:
 	pandoc src/md/siakhooi-devutils-echo-colors.1.md -s -t man | man -l -
