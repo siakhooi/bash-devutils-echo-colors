@@ -11,5 +11,8 @@ jobs:
   build-deb:
     uses: ./.github/workflows/build-deb.yml
     needs: shellcheck
+  build-rpm:
+    uses: ./.github/workflows/build-rpm.yml
+    needs: shellcheck
   bats-test:
     uses: ./.github/workflows/test-with-bats.yml
