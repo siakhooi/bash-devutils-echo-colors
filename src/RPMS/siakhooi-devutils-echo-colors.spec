@@ -1,5 +1,5 @@
 Name:           siakhooi-devutils-echo-colors
-Version:        1.3.8
+Version:        1.3.9
 Release:        1%{?dist}
 Summary:        Several echo commands to print text with colors.
 
@@ -61,8 +61,14 @@ Several echo commands to print text with colors.
 %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz
 
 %changelog
-* Sun Nov 3 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.7
+* Sun Nov 3 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.9
+- fix change log
+
+* Sun Nov 3 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.8
 - bug fix: cat.* didn't print last line without newline
+
+* Sun Nov 3 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.7
+- clean up release history
 
 * Wed Oct 30 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.6
 - initial rpm version
