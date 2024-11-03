@@ -60,7 +60,7 @@ ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/clea
 
 %changelog
 * Wed Oct 30 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.6
-- create rpm version
+- initial rpm version
 
 * Tue Oct 29 2024 Siak Hooi <siakhooi@gmail.com> - 1.3.5
 - update script to google style
