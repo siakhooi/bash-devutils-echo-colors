@@ -21,7 +21,7 @@ run-test:
 	scripts/bats-test-run.sh
 
 set-path:
-	export PATH=$PATH:$(pwd)/src/bin
+	export PATH=$(pwd)/src/bin:$PATH
 prepare:
 	sudo apt update -y
 	sudo apt install pandoc shellcheck fakeroot -y

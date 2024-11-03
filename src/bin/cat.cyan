@@ -1,5 +1,13 @@
 #!/bin/bash
 
-while read -r line; do
-    echo.cyan -e "${line}"
+readonly command=echo.cyan
+
+while true; do
+    if read -r line; then
+        "$command" -e "${line}"
+    elif [[ -n $line ]]; then
+        "$command" -e -n "${line}"
+    else
+        break
+    fi
 done
