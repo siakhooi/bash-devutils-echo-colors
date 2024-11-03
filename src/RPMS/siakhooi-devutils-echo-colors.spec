@@ -14,20 +14,22 @@ Requires:       bash
 Several echo commands to print text with colors.
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}%{_mandir}/man1
-install -m 0755 usr/bin/* %{buildroot}%{_bindir}
-install -m 644 usr/share/man/man1/* %{buildroot}%{_mandir}/man1
+%{__mkdir}   -v -p %{buildroot}%{_bindir}
+%{__mkdir}   -v -p %{buildroot}%{_mandir}/man1
+%{__mkdir}   -v -p %{buildroot}/usr/share/licenses/siakhooi-devutils-echo-colors
+%{__install} -v -m 0755 %{_topdir}/BUILD/usr/bin/* %{buildroot}%{_bindir}
+%{__install} -v -m 644  %{_topdir}/BUILD/usr/share/man/man1/* %{buildroot}%{_mandir}/man1
+%{__install} -v -m 644  %{_topdir}/BUILD/LICENSE %{buildroot}/usr/share/licenses/siakhooi-devutils-echo-colors
 
 %post
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.blue.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.cyan.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.green.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.magenta.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.red.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.yellow.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.grey.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/clear-colors.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.blue.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.cyan.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.green.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.magenta.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.red.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.yellow.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/echo.grey.1.gz
+%{__ln_s} -f %{_mandir}/man1/siakhooi-devutils-echo-colors.1.gz %{_mandir}/man1/clear-colors.1.gz
 
 %postun
 %{__rm} -f %{_mandir}/man1/echo.blue.1.gz
