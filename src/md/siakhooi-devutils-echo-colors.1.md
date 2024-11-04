@@ -17,6 +17,10 @@ cat.magenta - cat file with magenta color.\
 cat.red - cat file with red color.\
 cat.yellow - cat file with yellow color.\
 cat.grey - cat file with grey color.\
+echo.error - echo with red color to stderr.\
+echo.warn - echo with yellow color to stderr.\
+echo.info - echo with normal color to stderr.\
+echo.debug - echo with grey color to stderr.\
 clear-colors - remove colors from standard input and print to standard output.
 
 # SYNOPSIS
@@ -34,6 +38,10 @@ clear-colors - remove colors from standard input and print to standard output.
 **cat.red** [cat arguments]\
 **cat.yellow** [cat arguments]\
 **cat.grey** [cat arguments]\
+**echo.error** [echo arguments]\
+**echo.warn** [echo arguments]\
+**echo.info** [echo arguments]\
+**echo.debug** [echo arguments]\
 **clear-colors**
 
 # DESCRIPTION

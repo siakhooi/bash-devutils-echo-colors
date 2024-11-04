@@ -29,6 +29,10 @@ pandoc $SOURCE/md/siakhooi-devutils-echo-colors.1.md -s -t man | gzip -9 >$TARGE
   ln -s siakhooi-devutils-echo-colors.1.gz echo.yellow.1.gz
   ln -s siakhooi-devutils-echo-colors.1.gz echo.grey.1.gz
   ln -s siakhooi-devutils-echo-colors.1.gz clear-colors.1.gz
+  ln -s siakhooi-devutils-echo-colors.1.gz echo.error.1.gz
+  ln -s siakhooi-devutils-echo-colors.1.gz echo.debug.1.gz
+  ln -s siakhooi-devutils-echo-colors.1.gz echo.warn.1.gz
+  ln -s siakhooi-devutils-echo-colors.1.gz echo.info.1.gz
 )
 
 fakeroot dpkg-deb --build -Zxz $TARGET

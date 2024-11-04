@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo.red "$@" >&2
