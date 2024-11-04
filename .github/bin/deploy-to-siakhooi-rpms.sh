@@ -8,15 +8,15 @@ RPM_PACKAGE_FILE=$(basename "$PATH_TO_FILE")
 TMPDIR=$(mktemp -d)
 
 readonly TARGETPATH=docs
-readonly TARGETURL=https://${PUBLISH_TO_APT_GITHUB_TOKEN}@github.com/siakhooi/rpms.git
+readonly TARGETURL=https://${PUBLISH_TO_GITHUB_REPO_TOKEN}@github.com/siakhooi/rpms.git
 readonly TARGETBRANCH=main
 readonly TARGETDIR=rpms
 readonly TARGET_GIT_EMAIL=devutils-echo-colors@siakhooi.github.io
 readonly TARGET_GIT_USERNAME=devutils-echo-colors
 TARGET_COMMIT_MESSAGE="bash-devutils-echo-colors: Auto deploy [$(date)]"
 
-if [[ -z $PUBLISH_TO_APT_GITHUB_TOKEN ]]; then
-  echo "Error: PUBLISH_TO_APT_GITHUB_TOKEN can not be null." >&2
+if [[ -z $PUBLISH_TO_GITHUB_REPO_TOKEN ]]; then
+  echo "Error: PUBLISH_TO_GITHUB_REPO_TOKEN can not be null." >&2
   exit 1
 fi
 
