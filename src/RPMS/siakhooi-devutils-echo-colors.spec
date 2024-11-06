@@ -1,5 +1,5 @@
 Name:           siakhooi-devutils-echo-colors
-Version:        1.4.0
+Version:        1.5.0
 Release:        1%{?dist}
 Summary:        Several echo commands to print text with colors.
 
@@ -71,8 +71,18 @@ Several echo commands to print text with colors.
 %{_bindir}/echo.warn
 %{_bindir}/echo.error
 %{_bindir}/echo.info
+%{_bindir}/highlight.blue
+%{_bindir}/highlight.cyan
+%{_bindir}/highlight.green
+%{_bindir}/highlight.grey
+%{_bindir}/highlight.magenta
+%{_bindir}/highlight.red
+%{_bindir}/highlight.yellow
 
 %changelog
+* Wed Nov 6 2024 Siak Hooi <siakhooi@gmail.com> - 1.5.0
+- add highlight.{blue,green,red,yellow,cyan,magenta,grey}
+
 * Mon Nov 4 2024 Siak Hooi <siakhooi@gmail.com> - 1.4.0
 - add debugging: echo.error, echo.warn, echo.info, echo.debug
 

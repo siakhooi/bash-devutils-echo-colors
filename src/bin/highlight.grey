@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: $(basename "$0") word" >&2
+  exit 0
+fi
+
+word=$1
+color=90
+
+escape=$(printf '\033')
+sed "s,$word,${escape}[${color}m&${escape}[0m,g"
