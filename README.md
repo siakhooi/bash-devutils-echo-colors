@@ -13,6 +13,24 @@ echo.magenta <echo arguments>
 echo.red <echo arguments>
 echo.yellow <echo arguments>
 echo.grey <echo arguments>
+echo.error <echo arguments>
+echo.info <echo arguments>
+echo.debug <echo arguments>
+echo.warn <echo arguments>
+cat.blue
+cat.cyan
+cat.green
+cat.magenta
+cat.red
+cat.yellow
+cat.grey
+highlight.blue text
+highlight.cyan text
+highlight.green text
+highlight.magenta text
+highlight.red text
+highlight.yellow text
+highlight.grey text
 ```
 
 ## Sample
