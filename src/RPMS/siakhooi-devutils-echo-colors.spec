@@ -78,8 +78,13 @@ Several echo commands to print text with colors.
 %{_bindir}/highlight.magenta
 %{_bindir}/highlight.red
 %{_bindir}/highlight.yellow
+%{_bindir}/print-progress
+%{_bindir}/print-progress-color
 
 %changelog
+* Sat Apr 12 2025 Siak Hooi <siakhooi@gmail.com> - 1.6.0
+- add print-progress, print-progress-color
+
 * Wed Nov 6 2024 Siak Hooi <siakhooi@gmail.com> - 1.5.0
 - add highlight.{blue,green,red,yellow,cyan,magenta,grey}
 
