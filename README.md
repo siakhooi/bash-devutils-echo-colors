@@ -31,6 +31,8 @@ highlight.magenta text
 highlight.red text
 highlight.yellow text
 highlight.grey text
+print-progress [-h] [-w width] [-d done_char] [-l left_char] [-p prefix] [-o open_bracket] [-c close_bracket] currentState totalState [task_description]
+print-progress-color [-h] [-w width] [-d done_char] [-l left_char] [-p prefix] [-o open_bracket] [-c close_bracket] currentState totalState [task_description]
 ```
 
 ## Sample

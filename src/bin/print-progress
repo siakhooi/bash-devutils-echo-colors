@@ -1,0 +1,72 @@
+#!/bin/bash
+
+width=${PROGRESS_BAR_WIDTH:-50}
+done_char=${PROGRESS_BAR_DONE_CHAR:-"#"}
+left_char=${PROGRESS_BAR_LEFT_CHAR:-" "}
+prefix=${PROGRESS_BAR_PREFIX:-"Progress: "}
+open_bracket=${PROGRESS_BAR_OPEN_BRACKET:-"["}
+close_bracket=${PROGRESS_BAR_CLOSE_BRACKET:-"]"}
+
+usage() {
+	echo "Usage: $(basename "$0") [-h] [-w width] [-d done_char] [-l left_char] [-p prefix] [-o open_bracket] [-c close_bracket] currentState totalState [task_description]"
+}
+while getopts "hw:d:l:p:o:c:" arg; do
+	case $arg in
+	h)
+		usage
+		exit 0
+		;;
+	w)
+		width="$OPTARG"
+		;;
+	d)
+		done_char="$OPTARG"
+		;;
+	l)
+		left_char="$OPTARG"
+		;;
+	p)
+		prefix="$OPTARG"
+		;;
+	o)
+		open_bracket="$OPTARG"
+		;;
+	c)
+		close_bracket="$OPTARG"
+		;;
+	*)
+		usage
+		exit 1
+		;;
+	esac
+done
+shift $((OPTIND - 1))
+if [[ $# -ne 2 ]] && [[ $# -ne 3 ]]; then
+	usage
+	exit 0
+fi
+
+readonly currentState=$1
+readonly totalState=$2
+if [[ $# -eq 3 ]]; then
+	readonly task_description=" $3"
+else
+	readonly task_description=""
+fi
+
+readonly percentage=$((currentState * 100 / totalState))
+
+readonly done_length=$(((percentage * width) / 100))
+readonly left_length=$((width - done_length))
+
+done_string=$(printf "%${done_length}s")
+left_string=$(printf "%${left_length}s")
+
+readonly done_string=${done_string// /$done_char}
+readonly left_string=${left_string// /$left_char}
+
+printf "\r%s%s%s%s%s%4d%%%s" \
+	"$prefix" \
+	"$open_bracket" "$done_string" "$left_string" "$close_bracket" \
+	"$percentage" \
+	"$task_description"
