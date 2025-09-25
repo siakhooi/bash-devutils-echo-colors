@@ -1,5 +1,5 @@
 Name:           siakhooi-devutils-echo-colors
-Version:        1.6.0
+Version:        1.7.0
 Release:        1%{?dist}
 Summary:        Several echo commands to print text with colors.
 
@@ -80,8 +80,18 @@ Several echo commands to print text with colors.
 %{_bindir}/highlight.yellow
 %{_bindir}/print-progress
 %{_bindir}/print-progress-color
+%{_bindir}/printf.blue
+%{_bindir}/printf.cyan
+%{_bindir}/printf.green
+%{_bindir}/printf.grey
+%{_bindir}/printf.magenta
+%{_bindir}/printf.red
+%{_bindir}/printf.yellow
 
 %changelog
+* Thu Sep 25 2025 Siak Hooi <siakhooi@gmail.com> - 1.7.0
+- add printf.{blue,cyan,green,magenta,red,yellow}
+
 * Sat Apr 12 2025 Siak Hooi <siakhooi@gmail.com> - 1.6.0
 - add print-progress, print-progress-color
 
