@@ -12,7 +12,7 @@ jobs:
       - run: sudo apt install bats
       - run: ./scripts/bats-test-setup.sh
       - run: ./scripts/bats-test-run.sh
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: bats-test-results
           path: |
