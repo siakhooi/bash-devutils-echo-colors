@@ -1,3 +1,5 @@
 #!/bin/bash
 
+[[ "$ECHO_DEBUG_OFF" == "true" ]] && exit 0
+
 echo.grey "$@" >&2

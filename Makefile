@@ -10,9 +10,9 @@ check-rpm-version:
 	rpm -qf /usr/bin/echo.red
 set-version:
 	scripts/set-version.sh
-git-commit-and-push:
+commit:
 	scripts/git-commit-and-push.sh
-create-release:
+release:
 	scripts/create-release.sh
 all-deb: clean set-version shellcheck build-deb
 all-rpm: clean set-version shellcheck build-rpm
