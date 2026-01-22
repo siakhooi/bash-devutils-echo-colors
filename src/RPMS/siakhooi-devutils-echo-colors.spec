@@ -1,5 +1,5 @@
 Name:           siakhooi-devutils-echo-colors
-Version:        1.8.1
+Version:        1.8.2
 Release:        1%{?dist}
 Summary:        Several echo commands to print text with colors.
 
@@ -89,6 +89,9 @@ Several echo commands to print text with colors.
 %{_bindir}/printf.yellow
 
 %changelog
+* Thu Jan 22 2025 Siak Hooi <siakhooi@gmail.com> - 1.8.2
+- fix echo.debug with ECHO_DEBUG_ON
+
 * Mon Dec 29 2025 Siak Hooi <siakhooi@gmail.com> - 1.8.1
 - replace ECHO_DEBUG_OFF with ECHO_DEBUG_ON
 

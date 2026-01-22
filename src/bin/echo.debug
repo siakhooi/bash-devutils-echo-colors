@@ -1,3 +1,5 @@
 #!/bin/bash
 
-[[ "$ECHO_DEBUG_ON" == "true" ]] && echo.grey "$@" >&2
+if [[ "$ECHO_DEBUG_ON" == "true" ]]; then
+	echo.grey "$@" >&2
+fi
