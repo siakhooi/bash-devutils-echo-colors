@@ -89,7 +89,7 @@ Several echo commands to print text with colors.
 %{_bindir}/printf.yellow
 
 %changelog
-* Thu Jan 22 2025 Siak Hooi <siakhooi@gmail.com> - 1.8.2
+* Thu Jan 22 2026 Siak Hooi <siakhooi@gmail.com> - 1.8.2
 - fix echo.debug with ECHO_DEBUG_ON
 
 * Mon Dec 29 2025 Siak Hooi <siakhooi@gmail.com> - 1.8.1
