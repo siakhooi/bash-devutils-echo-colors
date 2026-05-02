@@ -1,0 +1,10 @@
+repo: siakhooi/rpms
+branch: main
+git_commit_user: devutils-echo-colors
+git_commit_email: devutils-echo-colors@siakhooi.github.io
+git_commit_message: "devutils-echo-colors: Auto deploy"
+
+files:
+  - source: siakhooi-devutils-echo-colors-*.fc*.noarch.rpm
+    target: docs/
+    items: 1
