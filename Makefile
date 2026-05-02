@@ -10,8 +10,6 @@ check-rpm-version:
 	rpm -qf /usr/bin/echo.red
 set-version:
 	scripts/set-version.sh
-commit:
-	scripts/git-commit-and-push.sh
 release:
 	scripts/create-release.sh
 all-deb: clean set-version shellcheck build-deb
@@ -37,3 +35,7 @@ delete-tags:
 
 terminalizer:
 	terminalizer render docs/terminalizer-echo-colors.yml
+docker-build-rpm:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:rpm44 scripts/build-rpms.sh
+docker-build-deb:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
