@@ -1,4 +1,4 @@
-% ECHO-COLORS(1) Siak Hooi DevUtils 1.1.0 | DevUtils Commands
+% ECHO-COLORS(1) 1.1.0 | Echo Colors Commands
 % Siak Hooi
 % February 2023
 
@@ -73,7 +73,7 @@ Programs that echo with colors.
 MIT
 
 # BUGS
-Report bugs at https://github.com/siakhooi/bash-devutils-echo-colors/issues.
+Report bugs at https://github.com/siakhooi/echo-colors/issues.
 
 # SEE ALSO
 echo(1)

@@ -16,23 +16,23 @@ chmod 755 $TARGET/usr/bin/*
 
 # Man Pages
 mkdir -p $TARGET/usr/share/man/man1/
-pandoc $SOURCE/md/siakhooi-devutils-echo-colors.1.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/siakhooi-devutils-echo-colors.1.gz
+pandoc $SOURCE/md/siakhooi-echo-colors.1.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/siakhooi-echo-colors.1.gz
 
 ## Create links
 (
   cd $TARGET/usr/share/man/man1/
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.blue.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.cyan.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.green.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.magenta.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.red.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.yellow.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.grey.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz clear-colors.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.error.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.debug.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.warn.1.gz
-  ln -s siakhooi-devutils-echo-colors.1.gz echo.info.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.blue.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.cyan.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.green.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.magenta.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.red.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.yellow.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.grey.1.gz
+  ln -s siakhooi-echo-colors.1.gz clear-colors.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.error.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.debug.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.warn.1.gz
+  ln -s siakhooi-echo-colors.1.gz echo.info.1.gz
 )
 
 fakeroot dpkg-deb --build -Zxz $TARGET

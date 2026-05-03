@@ -27,7 +27,7 @@ prepare:
 	sudo apt install pandoc shellcheck fakeroot -y
 
 test-man:
-	pandoc src/md/siakhooi-devutils-echo-colors.1.md -s -t man | man -l -
+	pandoc src/md/siakhooi-echo-colors.1.md -s -t man | man -l -
 
 delete-tags:
 	git tag --delete 1.0.0

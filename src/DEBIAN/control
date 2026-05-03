@@ -1,7 +1,7 @@
-Package: siakhooi-devutils-echo-colors
+Package: siakhooi-echo-colors
 Version: 1.8.2
 Maintainer: Siak Hooi <siakhooi@gmail.com>
 Depends: coreutils, bash
 Architecture: amd64
-Homepage: <https://github.com/siakhooi/bash-devutils-echo-colors>
+Homepage: <https://github.com/siakhooi/echo-colors>
 Description: Several echo commands to print text with colors.

@@ -1,10 +1,10 @@
 repo: siakhooi/apt
 branch: main
-git_commit_user: devutils-echo-colors
-git_commit_email: devutils-echo-colors@siakhooi.github.io
-git_commit_message: "devutils-echo-colors: Auto deploy"
+git_commit_user: echo-colors
+git_commit_email: echo-colors@siakhooi.github.io
+git_commit_message: "echo-colors: Auto deploy"
 
 files:
-  - source: siakhooi-devutils-echo-colors_*_amd64.deb
+  - source: siakhooi-echo-colors_*_amd64.deb
     target: docs/pool/main/binary-amd64/
     items: 1
