@@ -23,7 +23,12 @@ test-man:
 
 terminalizer:
 	terminalizer render docs/terminalizer-echo-colors.yml
+
+root := justfile_directory()
+
 docker-build-rpm:
-	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:rpm44 scripts/build-rpms.sh
+	docker run --rm -v {{ root }}:/workspaces docker.io/siakhooi/devcontainer:rpm44 scripts/build-rpms.sh
 docker-build-deb:
-	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
+	docker run --rm -v {{ root }}:/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
+
+all: clean set-version shellcheck docker-build-deb docker-build-rpm
