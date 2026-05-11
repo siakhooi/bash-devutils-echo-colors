@@ -1,5 +1,5 @@
 Package: siakhooi-echo-colors
-Version: 1.8.2
+Version: 1.9.0
 Maintainer: Siak Hooi <siakhooi@gmail.com>
 Depends: coreutils, bash
 Architecture: amd64
