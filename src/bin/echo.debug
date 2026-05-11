@@ -1,5 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: outputs the given arguments in debug color if ECHO_DEBUG_ON is true.
+# Usage: echo.debug [options]
+#
+
+set -euo pipefail
 
 if [[ "$ECHO_DEBUG_ON" == "true" ]]; then
-	echo.grey "$@" >&2
+  echo.grey "$@" >&2
 fi

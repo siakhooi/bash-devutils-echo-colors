@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: outputs the given arguments in yellow color.
+# Usage: printf.yellow [options]
+#
 
-STARTCOLOR=$'\e[1;33m'
-ENDCOLOR=$'\e[0m'
+set -euo pipefail
+
+readonly STARTCOLOR=$'\e[1;33m'
+readonly ENDCOLOR=$'\e[0m'
 
 echo -n "${STARTCOLOR}"
 # shellcheck disable=SC2059

@@ -1,12 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: highlights a word in red in standard input.
+# Usage: highlight.red [options]
+#
+
+set -euo pipefail
+
+# ===== Constants =====
+readonly color='1;31'
+readonly escape=$'\033'
 
 if [[ $# -ne 1 ]]; then
   echo "Usage: $(basename "$0") word" >&2
-  exit 0
+  exit 1
 fi
 
-word=$1
-color=31
+readonly word=$1
+# shellcheck disable=SC2016
+escaped_word=$(printf '%s\n' "$word" | sed 's/[[\.*^$()+?{|]/\\&/g')
+readonly escaped_word
 
-escape=$(printf '\033')
-sed "s,$word,${escape}[${color}m&${escape}[0m,g"
+sed "s,$escaped_word,${escape}[${color}m&${escape}[0m,g"

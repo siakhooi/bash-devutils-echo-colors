@@ -1,38 +1,100 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+#
+# Description: Build an RPM package from the source files.
+# Usage: ./build-rpms.sh [options]
+#
 
-rm -rf ~/rpmbuild
-rpmdev-setuptree
+set -euo pipefail
 
+if [[ ! -f ./build.env ]]; then
+	echo "Error: build.env file not found. Please create it with the necessary variables."
+	exit 1
+fi
+# shellcheck disable=SC1091
+source ./build.env
+if [[ -z "${PACKAGE_NAME:-}" ]]; then
+	echo "Error: PACKAGE_NAME variable not set in build.env."
+	exit 1
+fi
+
+# ===== Constants =====
 readonly SOURCE=src
 readonly TARGET=~/rpmbuild/BUILD/
 
-# Spec File
-cp $SOURCE/RPMS/siakhooi-echo-colors.spec ~/rpmbuild/SPECS
+# ===== Argument Parsing =====
+parse_args() {
+	while getopts "h" opt; do
+		case "${opt}" in
+		h)
+			usage
+			exit 0
+			;;
+		*)
+			usage
+			exit 1
+			;;
+		esac
+	done
+	shift $((OPTIND - 1))
+}
+# ===== Helper Functions =====
+clean_rpmbuild() {
+	rm -rf ~/rpmbuild
+}
+setup_rpmbuild_tree() {
+	rpmdev-setuptree
+}
+copy_spec_file() {
+	cp $SOURCE/RPMS/"${PACKAGE_NAME}".spec ~/rpmbuild/SPECS
+}
+copy_binary_files() {
+	mkdir -p $TARGET/usr/bin
+	cp -vr $SOURCE/bin $TARGET/usr
+	chmod 755 $TARGET/usr/bin/*
+}
+copy_license_file() {
+	cp -vf ./LICENSE "$TARGET"
+}
+build_man_pages() {
+	mkdir -p $TARGET/usr/share/man/man1/
+	pandoc $SOURCE/md/siakhooi-echo-colors.1.md -s -t man |
+		gzip -9 >$TARGET/usr/share/man/man1/siakhooi-echo-colors.1.gz
 
-# Binary File
-mkdir -p $TARGET/usr/bin
-cp -vr $SOURCE/bin $TARGET/usr
-chmod 755 $TARGET/usr/bin/*
+}
+build_rpm_package() {
+	rpmlint ~/rpmbuild/SPECS/"${PACKAGE_NAME}".spec
+	rpmbuild -bb -vv ~/rpmbuild/SPECS/"${PACKAGE_NAME}".spec
+	cp -vf ~/rpmbuild/RPMS/noarch/"${PACKAGE_NAME}"-*.rpm .
+}
+query_rpm_package() {
+	tree ~/rpmbuild/
+	rpm -ql ~/rpmbuild/RPMS/noarch/"${PACKAGE_NAME}"-*.rpm
+}
+generate_rpm_checksums() {
+	rpm_file=$(basename "$(ls ./"${PACKAGE_NAME}"-*.rpm)")
+	sha256sum "$rpm_file" >"$rpm_file.sha256sum"
+	sha512sum "$rpm_file" >"$rpm_file.sha512sum"
+}
+# ===== Main Logic =====
+main() {
 
-# Man Pages
-mkdir -p $TARGET/usr/share/man/man1/
-pandoc $SOURCE/md/siakhooi-echo-colors.1.md -s -t man |
-  gzip -9 >$TARGET/usr/share/man/man1/siakhooi-echo-colors.1.gz
+	parse_args
 
-# License
-cp -vf ./LICENSE "$TARGET"
+	clean_rpmbuild
+	setup_rpmbuild_tree
 
-# build rpm file
-rpmlint ~/rpmbuild/SPECS/siakhooi-echo-colors.spec
-rpmbuild -bb -vv ~/rpmbuild/SPECS/siakhooi-echo-colors.spec
-cp -vf ~/rpmbuild/RPMS/noarch/siakhooi-echo-colors-*.rpm .
+	copy_spec_file
+	copy_binary_files
 
-# query
-tree ~/rpmbuild/
-rpm -ql ~/rpmbuild/RPMS/noarch/siakhooi-echo-colors-*.rpm
+	copy_license_file
 
-rpm_file=$(basename "$(ls ./siakhooi-echo-colors-*.rpm)")
+	build_man_pages
 
-sha256sum "$rpm_file" >"$rpm_file.sha256sum"
-sha512sum "$rpm_file" >"$rpm_file.sha512sum"
+	build_rpm_package
+	query_rpm_package
+
+	generate_rpm_checksums
+}
+
+# ===== Entrypoint =====
+main "$@"

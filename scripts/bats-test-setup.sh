@@ -1,5 +1,10 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+#
+# Description: Set up the environment for running BATS tests.
+# Usage: ./bats-test-setup.sh [options]
+#
+
+set -euo pipefail
 
 sudo apt update -y
 sudo apt install bats -y

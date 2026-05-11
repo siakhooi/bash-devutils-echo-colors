@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: outputs the given arguments in cyan color.
+# Usage: echo.cyan [options]
+#
 
-STARTCOLOR=$'\e[1;36m'
-ENDCOLOR=$'\e[0m'
+set -euo pipefail
+
+readonly STARTCOLOR=$'\e[1;36m'
+readonly ENDCOLOR=$'\e[0m'
 
 echo -n "${STARTCOLOR}"
 echo "$@"

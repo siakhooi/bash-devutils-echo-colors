@@ -1,3 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: outputs the given arguments.
+# Usage: echo.info [options]
+#
+
+set -euo pipefail
 
 echo "$@" >&2

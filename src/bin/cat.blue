@@ -1,13 +1,35 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: reads from standard input and outputs to standard output, with color formatting.
+# Usage: cat.blue [options]
+#
 
 readonly command=echo.blue
 
+usage() {
+  echo "Usage: $(basename "$0") [-h]"
+  echo "reads from standard input and outputs to standard output, blue color."
+}
+while getopts "h" arg; do
+  case $arg in
+  h)
+    usage
+    exit 0
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+  esac
+done
+shift $((OPTIND - 1))
+
 while true; do
-    if read -r line; then
-        "$command" -e "${line}"
-    elif [[ -n $line ]]; then
-        "$command" -e -n "${line}"
-    else
-        break
-    fi
+  if IFS= read -r line; then
+    "$command" -e "${line}"
+  elif [[ -n $line ]]; then
+    "$command" -e -n "${line}"
+  else
+    break
+  fi
 done

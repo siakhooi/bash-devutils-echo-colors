@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: outputs the given arguments in grey color.
+# Usage: echo.grey [options]
+#
 
-STARTCOLOR=$'\e[1;90m'
-ENDCOLOR=$'\e[0m'
+set -euo pipefail
+
+readonly STARTCOLOR=$'\e[1;90m'
+readonly ENDCOLOR=$'\e[0m'
 
 echo -n "${STARTCOLOR}"
 echo "$@"

@@ -1,9 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: prints a progress bar to standard output.
+# Usage: print-progress-color [options]
+#
 
+set -euo pipefail
+
+# ===== Constants =====
 PROGRESS_BAR_DONE_CHAR=$(echo.green -n "▇")
 PROGRESS_BAR_LEFT_CHAR=$(echo.grey -n "▇")
 PROGRESS_BAR_OPEN_BRACKET=$(echo.grey -n "")
 PROGRESS_BAR_CLOSE_BRACKET=$(echo.grey -n "")
+readonly PROGRESS_BAR_DONE_CHAR PROGRESS_BAR_LEFT_CHAR PROGRESS_BAR_OPEN_BRACKET PROGRESS_BAR_CLOSE_BRACKET
 export PROGRESS_BAR_DONE_CHAR PROGRESS_BAR_LEFT_CHAR PROGRESS_BAR_OPEN_BRACKET PROGRESS_BAR_CLOSE_BRACKET
 
-print-progress "$@"
+exec print-progress "$@"

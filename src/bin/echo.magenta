@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: outputs the given arguments in magenta color.
+# Usage: echo.magenta [options]
+#
 
-STARTCOLOR=$'\e[1;35m'
-ENDCOLOR=$'\e[0m'
+set -euo pipefail
+
+readonly STARTCOLOR=$'\e[1;35m'
+readonly ENDCOLOR=$'\e[0m'
 
 echo -n "${STARTCOLOR}"
 echo "$@"
