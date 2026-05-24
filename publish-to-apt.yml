@@ -2,7 +2,7 @@ repo: siakhooi/apt
 branch: main
 git_commit_user: echo-colors
 git_commit_email: echo-colors@siakhooi.github.io
-git_commit_message: "echo-colors: Auto deploy"
+git_commit_message: "{repo_name}: {ref_name} | {commit_short}"
 
 files:
   - source: siakhooi-echo-colors_*_amd64.deb
